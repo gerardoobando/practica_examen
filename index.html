@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Front End Censo — Luis Gerardo Obando Gonzalez ‑ 1890‑21‑4190</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme: light dark}
+    html{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"}
+    /* barras simples para porcentajes */
+    .bar{height: 0.625rem; border-radius: 9999px}
+  </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-20 backdrop-blur bg-white/70 dark:bg-slate-900/70 border-b border-slate-200/60 dark:border-slate-700/60">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-indigo-600"><path d="M3 5a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM14 5a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2h-3a2 2 0 01-2-2V5zM3 16a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3zM14 16a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2h-3a2 2 0 01-2-2v-3z"/></svg>
+      <div>
+        <h1 class="text-xl sm:text-2xl font-semibold leading-tight">Censo 2018 — Departamento de El Progreso</h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Nombre–Carnet: <span class="font-medium">Luis Gerardo Obando Gonzalez ‑ 1890‑21‑4190</span></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-4 py-6 space-y-6">
+    <!-- Controles -->
+    <section class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 sm:p-6 shadow-sm">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1" for="selMunicipio">Municipio</label>
+          <select id="selMunicipio" class="w-full rounded-xl border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 p-2.5">
+            <!-- Códigos oficiales del Depto. El Progreso (serie 200) -->
+            <option value="999">El Progreso</option>
+            <option value="201">Guastatoya</option>
+            <option value="202">Morazán</option>
+            <option value="203">San Agustín Acasaguastlán</option>
+            <option value="204">San Cristóbal Acasaguastlán</option>
+            <option value="205">El Jícaro</option>
+            <option value="206">Sansare</option>
+            <option value="207">Sanarate</option>
+            <option value="208">San Antonio La Paz</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights" class="grid md:grid-cols-2 lg:grid-cols-4 gap-4"></section>
+
+    <!-- Tarjetas de secciones conocidas -->
+    <section id="cards" class="grid md:grid-cols-2 gap-4"></section>
+
+    <!-- Tabla completa de indicadores -->
+    <section class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 sm:p-6 shadow-sm">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-lg font-semibold">Todos los indicadores</h2>
+        <span id="lblTotal" class="text-sm text-slate-500">0 ítems</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200">
+            <tr>
+              <th class="text-left font-semibold px-3 py-2">Clave</th>
+              <th class="text-left font-semibold px-3 py-2">Valor</th>
+            </tr>
+          </thead>
+          <tbody id="tbody" class="divide-y divide-slate-200 dark:divide-slate-700"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-4 pb-10 text-xs text-slate-500">
+    <p>Hecho con por Luis Gerardo Obando Gonzalez ‑1890‑ 21‑4190.</p>
+  </footer>
+
+  <!-- TOAST simple -->
+  <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 hidden px-4 py-2 rounded-full bg-slate-900 text-white text-sm shadow-lg">Copiado al portapapeles</div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
+</body>
+</html>
